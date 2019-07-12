@@ -15,6 +15,19 @@
               <textarea name="body" id="article-ckeditor" class="form-control"  rows="5" placeholder="Body text">{{$post->body}}</textarea>
             </div>
             <div class="form-group">
+                <label>Add Tag</label>
+                <select class="form-control" name="tag" id="">
+                  <option  selected disabled>select</option>
+                  
+                      @if(count($tags) > 0)
+                          @foreach ($tags as $tag)
+                          <option >{{$tag->name}}</option>
+                           @endforeach
+                      @endif
+                  
+                </select>
+              </div>
+            <div class="form-group">
                 <label>File Upload</label>
                 <input type="file" name="cover.image" class="form-control">
               </div>

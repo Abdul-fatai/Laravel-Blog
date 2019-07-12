@@ -19,11 +19,11 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    // public function tag(){
-    //     return $this->belongsTo('App\Tag');
-    // }
+    public function tag(){
+        return $this->hasMany(Tag::class);
+    }
 
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany(Comment::class);
     }
 }

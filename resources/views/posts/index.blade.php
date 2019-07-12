@@ -13,6 +13,9 @@
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
+                    <div class="badge bg-dark">
+                        {{$post->tag_name}}
+                    </div>
                     <div style="height:120px; overflow: hidden">
                         {!!$post->body!!}
                     </div>

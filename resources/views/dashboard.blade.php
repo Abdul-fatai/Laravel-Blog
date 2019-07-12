@@ -16,7 +16,8 @@
                     <a href="/posts/create" class="btn btn-primary">Create Post</a>
                     <h3 class="mt-3">Your Blog Posts</h3>
                     @if(count($posts) > 0)
-                    <table class="table table-striped">
+                    <div class="table-responsive text-nowrap">
+                    <table class="table">
                         <tr>
                             <th>Title</th>
                             <th>Edit</th>
@@ -36,8 +37,8 @@
                             </th>
                         </tr>
                     @endforeach
-
                     </table>
+                </div>
                     @else
                     <p>You have no Post</p>
                     @endif

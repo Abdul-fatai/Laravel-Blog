@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Post;
+use App\Comment;
+use App\Tag;
 
 class PostsController extends Controller
 {
@@ -38,8 +40,9 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('posts.create');
+    {   
+        $tags = Tag::all();
+        return view('posts.create', compact( 'tags'));
     }
 
     /**
@@ -53,7 +56,8 @@ class PostsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            'cover_image' => 'image|nullable|max:1999'
+            'cover_image' => 'image|nullable|max:1999',
+            'tag' => 'required'
         ]);
 
         // Handle File Upload 
@@ -78,6 +82,7 @@ class PostsController extends Controller
         $post->body = $request->input('body');
         $post->user_id = auth()->user()->id;
         $post->cover_image = $fileNameToStore;
+        $post->tag_name = $request->input('tag');
         $post->save();
 
         return redirect('/posts')->with('success', 'Post Created');
@@ -92,8 +97,9 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
-        return $post->comments()->name;
-        return view('posts.show')->with('post',  $post);
+        $comments = Comment::all();
+        // Table::where('id', 1)->get();
+        return view('posts.show', compact('post', 'comments'));
     }
 
     /**
@@ -105,13 +111,14 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
+        $tags = Tag::all();
 
         //Check for correct USer
         if(Auth()->user()->id !== $post->user_id){
             return redirect('/posts')->with('error', 'Unauthorized Page');
         }
 
-        return view('posts.edit')->with('post', $post);
+        return view('posts.edit', compact('post', 'tags'));
 
     }
 
@@ -126,7 +133,8 @@ class PostsController extends Controller
     {
         $this->validate($request, [
             'title' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'tag' => 'required'
         ]);
 
         //Handle File Upload 
@@ -146,6 +154,7 @@ class PostsController extends Controller
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->tag_name = $request->input('tag');
         if ($request->hasFile('cover_image')) {
             $post->cover_image = $fileNameToStore;
         }

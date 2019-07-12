@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\Post;
 
 class CommentsController extends Controller
 {
@@ -44,7 +45,7 @@ class CommentsController extends Controller
         $comment = new Comment;
         $comment->name = $request->input('name');
         $comment->message = $request->input('message');
-        $comment->comments()->id;
+        // $comment->post_id = posts()->id;
         $comment->save();
 
         return redirect('/posts');

@@ -16,8 +16,14 @@
             <div class="form-group">
               <label>Add Tag</label>
               <select class="form-control" name="tag" id="">
-                <option value="" selected disabled>select</option>
-                <option value=""></option>
+                <option  selected disabled>select</option>
+                
+                    @if(count($tags) > 0)
+                        @foreach ($tags as $tag)
+                        <option >{{$tag->name}}</option>
+                         @endforeach
+                    @endif
+                
               </select>
             </div>
             <div class="form-group">

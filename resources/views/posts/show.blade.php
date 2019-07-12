@@ -8,6 +8,11 @@
     </picture>
 
     <h1 class="mt-4">{{$post->title}}</h1>
+    
+            <div class="badge  bg-dark">
+                {{$post->tag_name}}
+            </div><br>
+       
     <small> Written on {{$post->created_at}} by {{$post->user->name}}</small>
     <small>{{$post->name}}</small>
     
@@ -28,7 +33,13 @@
             <br><br><br>
         @endif
     @endif
-        
+        @foreach($comments as $comment)
+            <div>
+                {{$comment->name}}
+                {{$comment->message}}
+                {{$comment->post_id}}
+            </div>
+        @endforeach
 
         @include('inc.message')
         <div class="bg-light p-4">
@@ -36,7 +47,7 @@
             <form action="/comments" method="POST">
                 @csrf 
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" placeholder="name">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="message" cols="30" rows="5" placeholder="Body text"></textarea>
