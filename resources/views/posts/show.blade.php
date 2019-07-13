@@ -33,17 +33,23 @@
             <br><br><br>
         @endif
     @endif
+    <h3 style="border-bottom: 5px solid red">Comments</h3>
         @foreach($comments as $comment)
             <div>
-                {{$comment->name}}
-                {{$comment->message}}
-                {{$comment->post_id}}
+                <article class="bg-light mb-3 p-2">
+                    <img src='https://png.pngtree.com/svg/20170920/4ff36bf59e.svg' class='img-rounded float-left m-1' width='50px' height='40px'>
+                    <h4 class="mt-3"> {{$comment->name}} <span style="color: red; font-size: 15px;">says:</span></h4>
+                     <small class='float-right pr-2'>{{$comment->created_at}}</small>
+                     <div>
+                    <p class="ml-5">{{$comment->message}}</p>
+                     </div>
+                  </article>
             </div>
         @endforeach
 
         @include('inc.message')
         <div class="bg-light p-4">
-                <h3 class="">Reply</h3>
+                <h3 class="">Leave a Comment</h3>
             <form action="/comments" method="POST">
                 @csrf 
                 <div class="form-group">

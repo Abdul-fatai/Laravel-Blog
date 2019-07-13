@@ -45,7 +45,7 @@ class CommentsController extends Controller
         $comment = new Comment;
         $comment->name = $request->input('name');
         $comment->message = $request->input('message');
-        // $comment->post_id = posts()->id;
+        $comment->Post::find('post_id');
         $comment->save();
 
         return redirect('/posts');
