@@ -34,7 +34,7 @@ class CommentsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $post_id)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
             'name' => 'required|max:155',
@@ -42,17 +42,17 @@ class CommentsController extends Controller
             'message' => 'required'
         ]);
 
-        $post = Post::find($post_id);
+        
 
         //Create comment
         $comment = new Comment;
         $comment->name = $request->input('name');
         $comment->email = $request->input('email');
         $comment->message = $request->input('message');
-        $comment->posts()->associate($post);
+        $comment->post_id = $id;
         $comment->save();
-
-        // return redirect('/posts');
+        
+        return redirect()->route('posts.show', $id);
     }
 
     /**

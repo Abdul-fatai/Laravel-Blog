@@ -38,7 +38,7 @@
             <div>
                 <article class="bg-light mb-3 p-2">
                     <img src='https://png.pngtree.com/svg/20170920/4ff36bf59e.svg' class='img-rounded float-left m-1' width='50px' height='40px'>
-                    <h5 class="mt-2"> {{$comment->name}}<span style="color: red; font-size: 15px;">says:</span></h5>
+                    <h5 class="mt-2"> {{$comment->name}}<span style="color: red; font-size: 15px;"> says:</span></h5>
                      <small class='float-right pr-2'>{{$comment->created_at}}</small>
                      <div>
                     <p class="ml-5">{{$comment->message}}</p>
@@ -50,10 +50,9 @@
         @include('inc.message')
         <div class="bg-light p-4">
                 <h3 class="">Leave a Comment</h3>
-            <form action="/comments/{{$posts->id}}" method="POST">
+            <form action="/comments/{{$posts->id}}" method="GET">
                 @csrf
 
-                {{ method_field('GET') }}
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
