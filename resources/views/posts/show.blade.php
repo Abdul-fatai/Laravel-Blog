@@ -50,7 +50,7 @@
         @include('inc.message')
         <div class="bg-light p-4">
                 <h3 class="">Leave a Comment</h3>
-            <form action="/comments/{{$posts->id}}" method="GET">
+            <form action="/comments/{{$posts->id}}" method="POST">
                 @csrf
 
                 <div class="form-group">
