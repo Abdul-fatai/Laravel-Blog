@@ -4,28 +4,28 @@
 <a href="/posts" class="mb-3 btn btn-outline-secondary">Go back</a><br>
 <div class="bg-white p-5">
     <picture>
-            <img style="width: 50%,"  src="/storage/cover_images/{{$post->cover_image}}" class="img-fluid" alt="Single-Image">
+            <img style="width: 50%,"  src="/storage/cover_images/{{$posts->cover_image}}" class="img-fluid" alt="Single-Image">
     </picture>
 
-    <h1 class="mt-4">{{$post->title}}</h1>
+    <h1 class="mt-4">{{$posts->title}}</h1>
     
             <div class="badge  bg-dark">
-                {{$post->tag_name}}
+                {{$posts->tag_name}}
             </div><br>
        
-    <small> Written on {{$post->created_at}} by {{$post->user->name}}</small>
-    <small>{{$post->name}}</small>
+    <small> Written on {{$posts->created_at}} by {{$posts->user->name}}</small>
+    <small>{{$posts->name}}</small>
     
     <hr>
     <div>
-        {!!$post->body!!}
+        {!!$posts->body!!}
     </div>
     <hr>
 
     @if(!Auth::guest())
-        @if(Auth::user()->id == $post->user_id)
-            <a href="/posts/{{$post->id}}/edit" class="float-left btn btn-outline-info">Edit</a>
-            <form class="form-group" action="/posts/{{$post->id}}" method="POST">
+        @if(Auth::user()->id == $posts->user_id)
+            <a href="/posts/{{$posts->id}}/edit" class="float-left btn btn-outline-info">Edit</a>
+            <form class="form-group" action="/posts/{{$posts->id}}" method="posts">
                 @csrf
                 {{ method_field('DELETE')}}
                 <button type="submit" class=" float-right btn btn-outline-danger">Delete</button>
@@ -33,12 +33,12 @@
             <br><br><br>
         @endif
     @endif
-    <h3 style="border-bottom: 5px solid red">Comments</h3>
-        @foreach($comments as $comment)
+    <h3 style="border-bottom: 5px solid red; width: 40%;">Comments</h3>
+        @foreach($posts->comments as $comment)
             <div>
                 <article class="bg-light mb-3 p-2">
                     <img src='https://png.pngtree.com/svg/20170920/4ff36bf59e.svg' class='img-rounded float-left m-1' width='50px' height='40px'>
-                    <h4 class="mt-3"> {{$comment->name}} <span style="color: red; font-size: 15px;">says:</span></h4>
+                    <h5 class="mt-2"> {{$comment->name}}<span style="color: red; font-size: 15px;"> says:</span></h5>
                      <small class='float-right pr-2'>{{$comment->created_at}}</small>
                      <div>
                     <p class="ml-5">{{$comment->message}}</p>
@@ -50,10 +50,15 @@
         @include('inc.message')
         <div class="bg-light p-4">
                 <h3 class="">Leave a Comment</h3>
-            <form action="/comments" method="POST">
-                @csrf 
+            <form action="/comments/{{$posts->id}}" method="POST">
+                @csrf
+
+                {{ method_field('GET') }}
                 <div class="form-group">
                     <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" name="message" cols="30" rows="5" placeholder="Body text"></textarea>

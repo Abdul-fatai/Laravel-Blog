@@ -8,6 +8,8 @@ use App\Post;
 use App\Comment;
 use App\Tag;
 
+use DB;
+
 class PostsController extends Controller
 {
 
@@ -29,7 +31,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        // $posts = Post::all();
+        
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
         return view('posts.index')->with('posts', $posts);
     }
@@ -96,10 +98,14 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        $comments = Comment::all();
-        // Table::where('id', 1)->get();
-        return view('posts.show', compact('post', 'comments'));
+        
+    
+       
+        $posts = Post::find($id);
+        $comment = Comment::select('name', 'message, posts_id')->where('posts_id', $id)->orderBy('created_at', 'desc')->get();
+        $posts->comments($comment);
+        return view('posts.show')->with('posts', $posts);
+
     }
 
     /**

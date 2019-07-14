@@ -31,7 +31,9 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::resource('posts', 'PostsController');
 Route::resource('tags', 'TagController');
-Route::resource('comments', 'CommentsController');
+
+//Comments Route
+Route::get('comments/{post_id}', 'CommentsController@store');
 
 
 Auth::routes();
