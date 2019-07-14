@@ -38,7 +38,7 @@
             <div>
                 <article class="bg-light mb-3 p-2">
                     <img src='https://png.pngtree.com/svg/20170920/4ff36bf59e.svg' class='img-rounded float-left m-1' width='50px' height='40px'>
-                    <h5 class="mt-2"> {{$comment->name}}<span style="color: red; font-size: 15px;"> says:</span></h5>
+                    <h5 class="mt-2"> {{$comment->name}}<span style="color: red; font-size: 15px;">says:</span></h5>
                      <small class='float-right pr-2'>{{$comment->created_at}}</small>
                      <div>
                     <p class="ml-5">{{$comment->message}}</p>
