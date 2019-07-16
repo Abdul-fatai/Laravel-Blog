@@ -7,7 +7,7 @@
       @csrf
             <div class="form-group">
               <label>Title</label>
-              <input type="text" name="title" class="form-control"  placeholder="title">
+              <input type="text" name="title" class="form-control"  placeholder="Title">
             </div>
             <div class="form-group">
               <label>Body</label>
@@ -16,7 +16,7 @@
             <div class="form-group">
               <label>Add Tag</label>
               <select class="form-control" name="tag" id="">
-                <option  selected disabled>select</option>
+                <option  selected disabled>Select</option>
                 
                     @if(count($tags) > 0)
                         @foreach ($tags as $tag)
@@ -30,7 +30,7 @@
                 <label>File Upload</label>
                 <input type="file" name="cover.image" class="form-control">
               </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary btn-lg">Publish</button>
           </form>
 
 
