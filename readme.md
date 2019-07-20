@@ -1,4 +1,4 @@
-<p align="center">Bloggerbase</p>
+<img align="center" width="100%" class="img-thumbnail fluid" src="/storage/img/logo.png" alt="Post Image">
 
 ## License
-Bloggersbase is open-source software :).
+Nerdsweb is an open-source software :).
