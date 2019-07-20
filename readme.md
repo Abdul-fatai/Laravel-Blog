@@ -1,4 +1,4 @@
-<img align="center" width="100%" class="img-thumbnail fluid" src="/storage/img/logo.png" alt="Post Image">
+<h1 align="center" color="purple" >NERDSWEB</h1>
 
 ## License
 Nerdsweb is an open-source software :).

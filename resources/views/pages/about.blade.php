@@ -5,7 +5,7 @@
             <div class="row">
             <div class="col-md-4 col-sm-4">
             <h1 class="text-center">About Nerdsweb</h1>
-            <img width="100%" class="img-thumbnail fluid" src="/storage/img/about.jpg" alt="Post Image">
+            <img width="100%" class="img-thumbnail fluid" src="/storage/img/about.jpg" alt="About Img">
             </div>
             <div class="col-md-8 col-sm-8">
                 <div class="mt-5">
