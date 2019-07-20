@@ -24,7 +24,7 @@ Route::get('/users/{id}', function($id){
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/services', 'PagesController@services');
+// Route::get('/services', 'PagesController@services');
 Route::get('/terms', 'PagesController@terms');
 Route::get('/privacy', 'PagesController@privacy');
 Route::get('/contact', 'PagesController@contact');

@@ -1,7 +1,7 @@
       <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
           <div class="container">
               <a class="navbar-brand" href="{{ url('/') }}">
-                  {{ config('app.name', 'Laravel') }}
+                <img width="50px"  src="/storage/img/logo.png" alt="Post Image">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                   <span class="navbar-toggler-icon"></span>
@@ -17,14 +17,15 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                       </li>
                       <li class="nav-item">
+                            <a class="nav-link" href="/posts">Blogs</a>
+                          </li>
+                      <li class="nav-item">
                         <a class="nav-link" href="/about">About Us</a>
                       </li>
-                      <li class="nav-item">
+                      {{-- <li class="nav-item">
                         <a class="nav-link" href="/services">Services</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/posts">Blog</a>
-                        </li>
+                      </li> --}}
+                      
                     </ul>
             
                   <!-- Right Side Of Navbar -->
