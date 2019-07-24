@@ -36,6 +36,14 @@ class PostsController extends Controller
         return view('posts.index')->with('posts', $posts);
     }
 
+
+    // public function search(Request $request){
+
+    //     $search = $request->get('search');
+    //     $posts = DB::table('posts')->where('title', 'like', '%' .$search. '%')->paginate(5);
+    //     return view('posts.index', ['posts' => $posts]);
+    // }
+
     /**
      * Show the form for creating a new resource.
      *

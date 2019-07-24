@@ -28,6 +28,7 @@ Route::get('/terms', 'PagesController@terms');
 Route::get('/privacy', 'PagesController@privacy');
 Route::get('/contact', 'PagesController@contact');
 
+// Route::get('/search', 'PostsController@search');
 Route::resource('posts', 'PostsController');
 Route::resource('tags', 'TagController');
 

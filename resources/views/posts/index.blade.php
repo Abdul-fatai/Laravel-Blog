@@ -2,6 +2,10 @@
 
 @section('content')
 @include('inc.message')
+    {{-- <!-- Search form -->
+    <form action="/search" method="get" class="w-responsive text-center mx-auto mt-5 p-1 text-light bg-dark">
+        <input class="form-control shadow-none" type="text" name="search"  placeholder="Search" aria-label="Search">
+  </form> --}}
     <div class="row mt-5">
     <div class="col-md-8">
         <h2 style="border-bottom: 5px solid red; width: 40%;">Articles

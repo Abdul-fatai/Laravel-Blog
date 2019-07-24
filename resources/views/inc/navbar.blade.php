@@ -12,10 +12,6 @@
                   <ul class="navbar-nav mr-auto">
 
                   </ul>
-                  <!-- Search form -->
-                  <form action="#" method="get" class="w-responsive text-center mx-auto">
-                     <input class="form-control shadow-none" type="text"  placeholder="Search" aria-label="Search">
-                  </form>
                   
                   {{-- <ul class="navbar-nav">
                       <li class="nav-item active">
