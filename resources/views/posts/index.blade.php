@@ -4,7 +4,8 @@
 @include('inc.message')
     <div class="row mt-5">
     <div class="col-md-8">
-        <h2>POSTS</h2>
+        <h2 style="border-bottom: 5px solid red; width: 40%;">Articles
+            </h2>
     @if(count($posts) > 0)
         @foreach ($posts as $post)
         <div class="mb-2 card bg-white">
@@ -35,7 +36,7 @@
     @endif
     </div>
     <div class="col-md-4">
-            <h2>Popular Articles</h2> 
+            <h2 style="border-bottom: 5px solid red; width: 80%;">Most Recent</h2> 
             <div class="mb-2 card bg-white">
                     <div class="card-body">
                         <div class="row">
