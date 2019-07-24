@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="mb-2 card bg-white">
+    <div class="mb-2 card bg-white mt-4">
         <div class="card-body">
             <div class="row">
             <div class="col-md-4 col-sm-4">

@@ -30,7 +30,7 @@
 <body>
     <div id="app">
        @include('inc.navbar')
-       <div class="container">
+       <div class="container mt-5">
         <main class="py-4">
             @yield('content')
         </main>

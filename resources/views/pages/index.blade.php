@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center mt-4">
     @if (Auth::guest())
         <h1>Welcome to Nerdsweb</h1>
         <p>This is a world Largest Blog Platform<p>

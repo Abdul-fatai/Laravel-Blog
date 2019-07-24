@@ -1,4 +1,4 @@
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
           <div class="container">
               <a class="navbar-brand" href="{{ url('/') }}">
                 <img width="40px"  src="/storage/img/logo.png" alt="Logo">
@@ -12,10 +12,9 @@
                   <ul class="navbar-nav mr-auto">
 
                   </ul>
-
                   <!-- Search form -->
-                  <form action="#" method="get" style="width: 50%">
-                     <input class="form-control" type="text"  placeholder="Search" aria-label="Search">
+                  <form action="#" method="get" class="w-responsive text-center mx-auto">
+                     <input class="form-control shadow-none" type="text"  placeholder="Search" aria-label="Search">
                   </form>
                   
                   {{-- <ul class="navbar-nav">
@@ -57,6 +56,9 @@
                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/dashboard">
                                     Dashboard
+                                </a> 
+                                <a class="dropdown-item" href="/posts/create">
+                                    Create Post
                                 </a> 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                      onclick="event.preventDefault();

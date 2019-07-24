@@ -2,7 +2,7 @@
 
 @section('content')
 @include('inc.message')
-    <div class="row">
+    <div class="row mt-5">
     <div class="col-md-8">
         <h2>POSTS</h2>
     @if(count($posts) > 0)
