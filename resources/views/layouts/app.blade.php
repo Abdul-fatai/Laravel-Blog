@@ -61,20 +61,20 @@
   
             <!-- Facebook -->
             <a class="fb-ic">
-              <i class="fab fa-facebook-f white-text mr-4"> </i>
+              <i class="fab fa-facebook-f white-text mr-4 h4"> </i>
             </a>
             <!-- Twitter -->
             <a class="tw-ic">
-              <i class="fab fa-twitter white-text mr-4"> </i>
+              <i class="fab fa-twitter white-text mr-4 h4"> </i>
             </a>
             <!--Instagram-->
             <a class="ins-ic">
-              <i class="fab fa-instagram white-text mr-4"> </i>
+              <i class="fab fa-instagram white-text mr-4 h4"> </i>
             </a>
 
             <!--Github-->
             <a class="ins-ic" href="https://github.com/Abdul-fatai/Nerdsweb">
-              <i class="fab fa-github white-text"> </i>
+              <i class="fab fa-github white-text h4"> </i>
             </a>
   
           </div>

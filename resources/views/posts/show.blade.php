@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<a href="/posts" class="mb-3 btn btn-outline-secondary">Go back</a><br>
-<div class="bg-white p-5">
+<a href="/posts" class="mb-3 btn btn-outline-secondary mt-5">Go back</a><br>
+<div class="bg-white">
     <picture>
-            <img style="width: 50%,"  src="/storage/cover_images/{{$posts->cover_image}}" class="img-fluid" alt="Single-Image">
+            <img class="img-fluid"  src="/storage/cover_images/{{$posts->cover_image}}"  alt="post image">
     </picture>
 
     <h1 class="mt-4">{{$posts->title}}</h1>

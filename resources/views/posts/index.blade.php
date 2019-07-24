@@ -12,7 +12,7 @@
             <div class="card-body">
                 <div class="row">
                 <div class="col-md-4 col-sm-4">
-                <img width="100%" class="img-thumbnail fluid" src="/storage/cover_images/{{$post->cover_image}}" alt="Post Image">
+                <img width="100%"  src="/storage/cover_images/{{$post->cover_image}}" alt="Post Image">
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <a href="/posts/{{$post->id}}"><h3>{{$post->title}}</h3></a>
