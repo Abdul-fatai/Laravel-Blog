@@ -12,6 +12,12 @@
                   <ul class="navbar-nav mr-auto">
 
                   </ul>
+
+                  <!-- Search form -->
+                  <form action="#" method="get" style="width: 50%">
+                     <input class="form-control" type="text"  placeholder="Search" aria-label="Search">
+                  </form>
+                  
                   {{-- <ul class="navbar-nav">
                       <li class="nav-item active">
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -25,7 +31,8 @@
                       <li class="nav-item">
                         <a class="nav-link" href="/services">Services</a>
                       </li> --}}
-                      
+                      <!-- Search form -->
+                 
                     </ul>
             
                   <!-- Right Side Of Navbar -->
