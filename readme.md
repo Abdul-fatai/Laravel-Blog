@@ -1,4 +1,4 @@
-<h1 align="center" color="purple" >NERDSWEB</h1>
+<h1 align="center" color="purple" >BLOG</h1>
 
-## License
-Nerdsweb is an open-source software :).
+## Open Source Application Built from scratch with Laravel for Learning purpose :)
+
